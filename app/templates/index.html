@@ -6,52 +6,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto Flask MVC</title>
+    <title>Inteligencia artificial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body>
-    <h1>Bienvenido, {{ usuario.nombre }}</h1>
-    <p>Correo: {{ usuario.correo }}</p>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Inteligencia artificial</span>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row ">
+          <div class="col-md-2 py-2 ">
+            <label for="exampleDataList" class="form-label">Inicio</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Seleccione</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label for="exampleDataList" class="form-label mt-2">Fin</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Seleccione</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+    
+            </select>
+            <div class="d-grid mt-3">
+              <button class="btn btn-primary">Calcular</button>
+            </div>
+    
+            <!-- <div class="card mt-3">
+              <div class="card-body">
+                This is some text within a card body.
+              </div>
+            </div> -->
+    
+            <div class="card mt-3">
+              <div class="card-header">Ruta</div>
+              <div class="card-body">
+                <p class="card-text">A -> B -> C</p>
+              </div>
+            </div>
+    
+          </div>
+          <div class="col-md-10">
+            <div id="mapa" class="mt-2"></div>
+          </div>
+        </div>
+    
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+      <script src="index.js"></script>
 
-    <select id="select1">
-        <optgroup label="Seleccione">
-            <option value="1">numero 1</option>
-        </optgroup>
-    </select>
-    <select id="select2">
-        <optgroup label="Seleccione">
-            <option value="2">numero 2</option>
-        </optgroup>
-    </select>
-
-    <button onclick="realizarSuma()">Sumar</button>
-
-<br>
-
-<div id="resultado"></div>
-
-<!-- Script de JavaScript al final del cuerpo -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    function realizarSuma() {
-        var numero1 = parseFloat(document.getElementById('select1').value);
-        var numero2 = parseFloat(document.getElementById('select2').value);
-
-        $.ajax({
-            type: 'POST',
-            url: '/sumar',
-            data: { 'numero1': numero1, 'numero2': numero2 },
-            success: function(response) {
-                // Actualizar el contenido del div con el resultado
-                document.getElementById('resultado').innerHTML = '<p>El resultado es: ' + response.resultado + '</p>';
-
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    }
-</script>
 </body>
 
 </html>
