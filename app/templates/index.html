@@ -1,0 +1,57 @@
+<!-- /mi_proyecto/app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Flask MVC</title>
+</head>
+
+<body>
+    <h1>Bienvenido, {{ usuario.nombre }}</h1>
+    <p>Correo: {{ usuario.correo }}</p>
+
+    <select id="select1">
+        <optgroup label="Seleccione">
+            <option value="1">numero 1</option>
+        </optgroup>
+    </select>
+    <select id="select2">
+        <optgroup label="Seleccione">
+            <option value="2">numero 2</option>
+        </optgroup>
+    </select>
+
+    <button onclick="realizarSuma()">Sumar</button>
+
+<br>
+
+<div id="resultado"></div>
+
+<!-- Script de JavaScript al final del cuerpo -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function realizarSuma() {
+        var numero1 = parseFloat(document.getElementById('select1').value);
+        var numero2 = parseFloat(document.getElementById('select2').value);
+
+        $.ajax({
+            type: 'POST',
+            url: '/sumar',
+            data: { 'numero1': numero1, 'numero2': numero2 },
+            success: function(response) {
+                // Actualizar el contenido del div con el resultado
+                document.getElementById('resultado').innerHTML = '<p>El resultado es: ' + response.resultado + '</p>';
+
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
+</body>
+
+</html>
