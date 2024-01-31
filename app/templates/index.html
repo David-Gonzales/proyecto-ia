@@ -33,23 +33,10 @@
         <select id="destino" class="form-select" aria-label="Default select example">
           <option selected>--Seleccione--</option>
         </select>
-        <div class="d-grid mt-3">
-          <button class="btn btn-primary">Calcular</button>
+        <div class="d-grid mt-1">
+          <button class="btn btn-primary my-2" id="calcularRuta">Calcular ruta</button>
+          <button class="btn btn-success" id="nuevaRuta" disabled>Nueva ruta</button>
         </div>
-
-        <!-- <div class="card mt-3">
-              <div class="card-body">
-                This is some text within a card body.
-              </div>
-            </div> -->
-
-        <div class="card mt-3">
-          <div class="card-header">Ruta</div>
-          <div class="card-body">
-            <p class="card-text">A -> B -> C</p>
-          </div>
-        </div>
-
       </div>
       <div class="col-md-10">
         <div id="mapa" class="mt-2"></div>
@@ -61,6 +48,7 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/funciones.js') }}"></script>
 
 </body>
 
