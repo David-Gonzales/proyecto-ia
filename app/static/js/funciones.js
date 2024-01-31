@@ -16,13 +16,13 @@ btnOrigen.addEventListener("click", () => {
     destino: destinoValue,
   };
 
-  fetch('/calcularRuta', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(datos),
-    })
+  fetch("/calcularRuta", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(datos),
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error(
@@ -48,8 +48,6 @@ btnOrigen.addEventListener("click", () => {
     .catch((error) => {
       console.error("Error en la petición:", error.message);
     });
-
-  
 });
 
 btnNuevo.addEventListener("click", () => {
