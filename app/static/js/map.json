@@ -1,93 +1,1251 @@
 {
     "type": "FeatureCollection",
     "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.87999202210838,
-                    -6.7771485943674605
-                ],
-                "type": "Point"
-            }
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Clínica Del Pacífico"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.86284569485902,
-                    -6.762051510531279
-                ],
-                "type": "Point"
-            }
+        "geometry": {
+          "coordinates": [
+            -79.84582066220545,
+            -6.774792965821405
+          ],
+          "type": "Point"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.83968303623011,
-                    -6.786521137516019
-                ],
-                "type": "Point"
-            }
+        "id": 0
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Naylamp"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.8260469284019,
-                    -6.787603680201386
-                ],
-                "type": "Point"
-            }
+        "geometry": {
+          "coordinates": [
+            -79.84250410778728,
+            -6.7762764755159
+          ],
+          "type": "Point"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.8430924649295,
-                    -6.771769638825987
-                ],
-                "type": "Point"
-            }
+        "id": 1
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Max Salud"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.83944991928297,
-                    -6.7716041522638335
-                ],
-                "type": "Point"
-            }
+        "geometry": {
+          "coordinates": [
+            -79.83724542690766,
+            -6.775979773942353
+          ],
+          "type": "Point"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.84483496468918,
-                    -6.7716360783779095
-                ],
-                "type": "Point"
-            }
+        "id": 2
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Regional Docente Las Mercedes"
         },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "coordinates": [
-                    -79.84719348245683,
-                    -6.771170667949718
-                ],
-                "type": "Point"
-            }
-        }
+        "geometry": {
+          "coordinates": [
+            -79.84322120063442,
+            -6.772567692722944
+          ],
+          "type": "Point"
+        },
+        "id": 3
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Almanzor Aguinaga Asenjo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8308214701513,
+            -6.77313142954597
+          ],
+          "type": "Point"
+        },
+        "id": 4
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Universidad Privada Juan Mejía Baca"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.83255444453218,
+            -6.7677610678083795
+          ],
+          "type": "Point"
+        },
+        "id": 5
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "SISOL Salud Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.85281228124303,
+            -6.770698452201842
+          ],
+          "type": "Point"
+        },
+        "id": 6
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Institución Educativa 10021 San José"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.85000366759144,
+            -6.776128121565634
+          ],
+          "type": "Point"
+        },
+        "id": 7
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Universidad Tecnológica del Perú"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86311788430103,
+            -6.763956509369834
+          ],
+          "type": "Point"
+        },
+        "id": 8
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Regional de Lambayeque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86287867198695,
+            -6.761852513996047
+          ],
+          "type": "Point"
+        },
+        "id": 9
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado 9 de Octubre"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86311788430103,
+            -6.775290778347227
+          ],
+          "type": "Point"
+        },
+        "id": 10
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Sol de Oro - Las Brisas"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86455315818634,
+            -6.783333196886872
+          ],
+          "type": "Point"
+        },
+        "id": 11
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Capitán Remigio Elías Aguirre Romero"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8608994121994,
+            -6.768237516684138
+          ],
+          "type": "Point"
+        },
+        "id": 12
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado El Pueblo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86945859773445,
+            -6.769111912714337
+          ],
+          "type": "Point"
+        },
+        "id": 13
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "SENATI"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8717363860532,
+            -6.775349527378637
+          ],
+          "type": "Point"
+        },
+        "id": 14
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "SENCICO"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8734312119368,
+            -6.7764581622592885
+          ],
+          "type": "Point"
+        },
+        "id": 15
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Universidad de San Martín de Porres"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.88026128895596,
+            -6.776663089533727
+          ],
+          "type": "Point"
+        },
+        "id": 16
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Gerencia Regional de Transportes y Comunicaciones"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87837266074214,
+            -6.78460346490003
+          ],
+          "type": "Point"
+        },
+        "id": 17
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Universidad de Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87839585164228,
+            -6.789959891516503
+          ],
+          "type": "Point"
+        },
+        "id": 18
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Luis Heysen Incháustegui"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87988628912302,
+            -6.787591911432315
+          ],
+          "type": "Point"
+        },
+        "id": 19
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Universidad César Vallejo - Campus Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87960431446439,
+            -6.786863915214326
+          ],
+          "type": "Point"
+        },
+        "id": 20
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Parque Nuestra Señora del Carmen"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87692826778822,
+            -6.786804790480417
+          ],
+          "type": "Point"
+        },
+        "id": 21
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Parque Nuestra Señora de Guadalupe"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87710550900246,
+            -6.788292781760731
+          ],
+          "type": "Point"
+        },
+        "id": 22
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Parque Infantil de Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84715814693354,
+            -6.771675383705329
+          ],
+          "type": "Point"
+        },
+        "id": 23
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Banco de la Nación"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84489759108939,
+            -6.771388145510244
+          ],
+          "type": "Point"
+        },
+        "id": 24
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Plazuela Elías Aguirre"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84307714166083,
+            -6.771110515975167
+          ],
+          "type": "Point"
+        },
+        "id": 25
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Municipalidad Provincial de Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84315687194055,
+            -6.771754671023274
+          ],
+          "type": "Point"
+        },
+        "id": 26
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Colegio Santa Ángela"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84782353996499,
+            -6.7883754453882545
+          ],
+          "type": "Point"
+        },
+        "id": 27
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "C.E.P. Santa María Reina"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8468243120222,
+            -6.785205941305833
+          ],
+          "type": "Point"
+        },
+        "id": 28
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Aeropuerto Fap José A. Quiñones Gonzales"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.82934992488306,
+            -6.7775727774767205
+          ],
+          "type": "Point"
+        },
+        "id": 29
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Real Plaza Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.83283015192983,
+            -6.778173163941787
+          ],
+          "type": "Point"
+        },
+        "id": 30
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mall Aventura"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86163528463948,
+            -6.763190118992682
+          ],
+          "type": "Point"
+        },
+        "id": 31
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "UGEL Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.85989516893997,
+            -6.76379776938235
+          ],
+          "type": "Point"
+        },
+        "id": 32
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Modelo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.83907621069841,
+            -6.765944122733828
+          ],
+          "type": "Point"
+        },
+        "id": 33
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Colegio Manuel Pardo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84238218370464,
+            -6.765544276184414
+          ],
+          "type": "Point"
+        },
+        "id": 34
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Plaza Cívica"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.83504216844653,
+            -6.760337296617834
+          ],
+          "type": "Point"
+        },
+        "id": 35
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Juan Pablo II"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8468705765668,
+            -6.7902342063804895
+          ],
+          "type": "Point"
+        },
+        "id": 36
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Policlínico Carlos Castañeda"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84223310775788,
+            -6.798994098862238
+          ],
+          "type": "Point"
+        },
+        "id": 37
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Antenor Orrego"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.83462112688845,
+            -6.79258945963096
+          ],
+          "type": "Point"
+        },
+        "id": 38
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Municipalidad La Victoria"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8444857426373,
+            -6.794449126577163
+          ],
+          "type": "Point"
+        },
+        "id": 39
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Institución Educativa 10796 Carlos A. Salaverry"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8480568019433,
+            -6.798412263986393
+          ],
+          "type": "Point"
+        },
+        "id": 40
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Urbanización La Purísima"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86421981087003,
+            -6.789019507090032
+          ],
+          "type": "Point"
+        },
+        "id": 41
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Colegio Bruning Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.88327686225635,
+            -6.797005038089765
+          ],
+          "type": "Point"
+        },
+        "id": 42
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Colegio San Agustín"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.89369042916721,
+            -6.804931923821698
+          ],
+          "type": "Point"
+        },
+        "id": 43
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Institución Educativa Elías Aguirre"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.91226388090453,
+            -6.819437361235728
+          ],
+          "type": "Point"
+        },
+        "id": 44
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Clínica San Juan de Dios - Chiclayo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.91912535729942,
+            -6.8247193601170295
+          ],
+          "type": "Point"
+        },
+        "id": 45
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Innova Schools"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.92364159366693,
+            -6.827591466286222
+          ],
+          "type": "Point"
+        },
+        "id": 46
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Pimentel"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.93145838857153,
+            -6.833409580669922
+          ],
+          "type": "Point"
+        },
+        "id": 47
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio El Carmen"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.93003007350796,
+            -6.828393088041622
+          ],
+          "type": "Point"
+        },
+        "id": 48
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Municipal Óscar Montalvo Finetti"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.93390814696149,
+            -6.830286278832119
+          ],
+          "type": "Point"
+        },
+        "id": 49
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Malecón de Pimentel"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.93707947470786,
+            -6.838182482455565
+          ],
+          "type": "Point"
+        },
+        "id": 50
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Parque Principal de Santa Rosa"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.92245024500542,
+            -6.879237612394874
+          ],
+          "type": "Point"
+        },
+        "id": 51
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Institución Educativa José Olaya Balandra"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.91983248743878,
+            -6.877541016989468
+          ],
+          "type": "Point"
+        },
+        "id": 52
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio de Santa Rosa"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.91518712608739,
+            -6.87751877930728
+          ],
+          "type": "Point"
+        },
+        "id": 53
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Parque Principal de Eten"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86282228564929,
+            -6.907479992981436
+          ],
+          "type": "Point"
+        },
+        "id": 54
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Plaza de Armas de Monsefú"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.87193475294931,
+            -6.87791062887834
+          ],
+          "type": "Point"
+        },
+        "id": 55
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio Jesús Cautivo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86956528090595,
+            -6.871082093885903
+          ],
+          "type": "Point"
+        },
+        "id": 56
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mini Coliseo - Monsefú"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86967115298133,
+            -6.874398939972949
+          ],
+          "type": "Point"
+        },
+        "id": 57
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Municipalidad de Reque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.81917955298012,
+            -6.865141980996356
+          ],
+          "type": "Point"
+        },
+        "id": 58
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio de Reque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.82288151087073,
+            -6.861082918125305
+          ],
+          "type": "Point"
+        },
+        "id": 59
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Puente Reque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.82585893710424,
+            -6.854365139870339
+          ],
+          "type": "Point"
+        },
+        "id": 60
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Municipalidad de Mórrope"
+        },
+        "geometry": {
+          "coordinates": [
+            -80.01568417098962,
+            -6.540395669826992
+          ],
+          "type": "Point"
+        },
+        "id": 61
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Universidad Nacional Pedro Ruiz Gallo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.90664901295034,
+            -6.706332591357906
+          ],
+          "type": "Point"
+        },
+        "id": 62
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Modelo de Lambayeque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.90232453430968,
+            -6.7052631844088495
+          ],
+          "type": "Point"
+        },
+        "id": 63
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Provincial Docente Belén de Lambayeque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.9018813580795,
+            -6.702439569021422
+          ],
+          "type": "Point"
+        },
+        "id": 64
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Colegio Nuestra Señora del Carmen"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.90329868566538,
+            -6.700767260047101
+          ],
+          "type": "Point"
+        },
+        "id": 65
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Elías Aguirre - Lambayeque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.90446066156035,
+            -6.697597733907159
+          ],
+          "type": "Point"
+        },
+        "id": 66
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado de Pomalca"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.77447645668362,
+            -6.768648131333009
+          ],
+          "type": "Point"
+        },
+        "id": 67
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio de Pomalca"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.76863134625918,
+            -6.756280982232198
+          ],
+          "type": "Point"
+        },
+        "id": 68
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio de Picsi"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.76796315476378,
+            -6.7158136310052186
+          ],
+          "type": "Point"
+        },
+        "id": 69
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Plaza de Armas de Picsi"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.77018136364681,
+            -6.718327679201877
+          ],
+          "type": "Point"
+        },
+        "id": 70
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Municipal de Picsi"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.77234786878176,
+            -6.719806921440551
+          ],
+          "type": "Point"
+        },
+        "id": 71
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Referencial de Ferreñafe"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.78890214259394,
+            -6.643068308498059
+          ],
+          "type": "Point"
+        },
+        "id": 72
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Carlos Samamé Cáceres"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.78946139596816,
+            -6.647720596896903
+          ],
+          "type": "Point"
+        },
+        "id": 73
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Municipal Ferreñafe"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.7915326689712,
+            -6.6370457689937865
+          ],
+          "type": "Point"
+        },
+        "id": 74
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Municipal de Tumán"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.70197642590816,
+            -6.747900594226834
+          ],
+          "type": "Point"
+        },
+        "id": 75
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Eugenio Zapata Mingoya"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.69999014528656,
+            -6.748578647909525
+          ],
+          "type": "Point"
+        },
+        "id": 76
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Hospital Referencial Docente de Tumán"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.69891010519804,
+            -6.746889676064455
+          ],
+          "type": "Point"
+        },
+        "id": 77
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Municipalidad distrital de Tumán"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.7010453656587,
+            -6.751488104937934
+          ],
+          "type": "Point"
+        },
+        "id": 78
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Agroindustrial de Tumán"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.70487703481015,
+            -6.752563010259692
+          ],
+          "type": "Point"
+        },
+        "id": 79
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio de Tumán"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.69162729131243,
+            -6.7454389916176325
+          ],
+          "type": "Point"
+        },
+        "id": 80
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio de Pátapo"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.63141180340403,
+            -6.73316710988459
+          ],
+          "type": "Point"
+        },
+        "id": 81
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Pedro Pablo Atusparias"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.82535212797929,
+            -6.75942607368664
+          ],
+          "type": "Point"
+        },
+        "id": 82
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Sagrado Corazón de Jesús"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.82021110339238,
+            -6.752588027407029
+          ],
+          "type": "Point"
+        },
+        "id": 83
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Moshoqueque"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.84264404175882,
+            -6.757784099477803
+          ],
+          "type": "Point"
+        },
+        "id": 84
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Mercado Los Patos"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.85959460032818,
+            -6.752978588727757
+          ],
+          "type": "Point"
+        },
+        "id": 85
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Municipal José Ríos Ubillus"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.86491795588134,
+            -6.552234017032632
+          ],
+          "type": "Point"
+        },
+        "id": 86
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Estadio Municipal Federico Villareal"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.85806164680533,
+            -6.511920056848524
+          ],
+          "type": "Point"
+        },
+        "id": 87
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Cementerio Jardines de la Paz - Túcume"
+        },
+        "geometry": {
+          "coordinates": [
+            -79.8585255856786,
+            -6.505292264935761
+          ],
+          "type": "Point"
+        },
+        "id": 88
+      }
     ]
-}
+  }

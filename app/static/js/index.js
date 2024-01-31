@@ -1,6 +1,6 @@
 const mapa = document.getElementById('mapa');
 
-const map = L.map(mapa).setView([-6.7715769944306885, -79.83870854313238], 30);
+const map = L.map(mapa).setView([-6.7715769944306885, -79.83870854313238], 14);
 
 const origen = document.getElementById('origen');
 
@@ -12,22 +12,48 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const getData = async () => {
 
-    // var archivo = new URL ('map.json', import.meta.url).pathname;
-    // console.log(archivo);
-
     const response = await fetch('../static/js/map.json');
-    console.log(response);
     const data = await response.json();
-    console.log(data);
-    listaOrigen = data.features;
-    listaDestino = data.features;
+    lista = data.features;
 
-    console.log("Lista Origen: ");
-    console.log(listaOrigen);
-    console.log("");
+    const estiloCirculo = customizedMarkerStyle('#FF7800');
 
-    console.log("Lista Destino: ");
-    console.log(listaDestino);
+    function customizedMarkerStyle(fillColor) {
+        return{
+            radius: 9,
+            fillColor,
+            color: 'black',
+            weight: 1.2,
+            opacity: 1,
+            fillOpacity: 0.8
+        }
+    }
+
+    function onEachFeature(feature, layer) {
+        if(feature.properties && feature.properties.nombre){
+            layer.bindPopup(feature.properties.nombre)
+        }
+    }
+
+    L.geoJson(lista, {
+        onEachFeature
+    }).addTo(map)
+    /*
+    //Estilos para círculo
+    L.geoJson(lista, {
+        pointToLayer: function(feature, latlng){
+            return L.circleMarker(latlng, estiloCirculo);
+        }
+    }).addTo(map)
+    */
+    // origen.addEventListener('change', (e) =>{
+    //     if(e.target.value == 1){
+    //         L.geoJson(lista)
+    //         .addTo(map)
+    //     }
+    // })
+
+    
 
 }
 
