@@ -1,9 +1,6 @@
 const mapa = document.getElementById('mapa');
-
 const map = L.map(mapa).setView([-6.7715769944306885, -79.83870854313238], 14);
-
 const origen = document.getElementById('origen');
-
 const destino = document.getElementById('destino');
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -39,7 +36,23 @@ const getData = async () => {
         onEachFeature
     }).addTo(map);
 
+    // Limpiar opciones existentes
+    origen.innerHTML = '<option value="0" selected>--Seleccione--</option>';
+    destino.innerHTML = '<option value="0" selected>--Seleccione--</option>';
 
+    // Obtener nombres de ubicaciones desde el GeoJSON
+    const nombresUbicaciones = lista.map(feature => feature.properties.nombre);
+
+    // Añadir opciones a los selects
+    nombresUbicaciones.forEach(nombre => {
+        const optionInicio = document.createElement('option');
+        optionInicio.value = nombre;
+        optionInicio.textContent = nombre;
+        const optionFin = optionInicio.cloneNode(true);
+
+        origen.appendChild(optionInicio);
+        destino.appendChild(optionFin);
+    });
     
     /*
     //Estilos para círculo
@@ -55,29 +68,6 @@ const getData = async () => {
     //         .addTo(map)
     //     }
     // })
-
-    // Obtén las referencias a los elementos select
-    const inicioSelect = document.getElementById('origen');
-    const finSelect = document.getElementById('destino');
-
-    // Limpiar opciones existentes
-    inicioSelect.innerHTML = '<option selected>Seleccione</option>';
-    finSelect.innerHTML = '<option selected>Seleccione</option>';
-
-    // Obtener nombres de ubicaciones desde el GeoJSON
-    const nombresUbicaciones = lista.map(feature => feature.properties.nombre);
-
-    // Añadir opciones a los selects
-    nombresUbicaciones.forEach(nombre => {
-        const optionInicio = document.createElement('option');
-        optionInicio.value = nombre;
-        optionInicio.textContent = nombre;
-        const optionFin = optionInicio.cloneNode(true);
-
-        inicioSelect.appendChild(optionInicio);
-        finSelect.appendChild(optionFin);
-    });
-
 }
 
 getData();
