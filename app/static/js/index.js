@@ -37,7 +37,10 @@ const getData = async () => {
 
     L.geoJson(lista, {
         onEachFeature
-    }).addTo(map)
+    }).addTo(map);
+
+
+    
     /*
     //Estilos para círculo
     L.geoJson(lista, {
@@ -53,7 +56,27 @@ const getData = async () => {
     //     }
     // })
 
-    
+    // Obtén las referencias a los elementos select
+    const inicioSelect = document.getElementById('origen');
+    const finSelect = document.getElementById('destino');
+
+    // Limpiar opciones existentes
+    inicioSelect.innerHTML = '<option selected>Seleccione</option>';
+    finSelect.innerHTML = '<option selected>Seleccione</option>';
+
+    // Obtener nombres de ubicaciones desde el GeoJSON
+    const nombresUbicaciones = lista.map(feature => feature.properties.nombre);
+
+    // Añadir opciones a los selects
+    nombresUbicaciones.forEach(nombre => {
+        const optionInicio = document.createElement('option');
+        optionInicio.value = nombre;
+        optionInicio.textContent = nombre;
+        const optionFin = optionInicio.cloneNode(true);
+
+        inicioSelect.appendChild(optionInicio);
+        finSelect.appendChild(optionFin);
+    });
 
 }
 

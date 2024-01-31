@@ -25,19 +25,13 @@
   <div class="container-fluid">
     <div class="row ">
       <div class="col-md-2 py-2 ">
-        <label for="exampleDataList" class="form-label">Origen:</label>
-        <select class="form-select" name="origen" id="origen">
-          <option value = "0" selected>Seleccione</option>
-          <option value="1">Lugar 1</option>
-          <option value="2">Lugar 2</option>
-          <option value="3">Lugar 3</option>
+        <label for="exampleDataList" class="form-label">Inicio</label>
+        <select id="origen" class="form-select" aria-label="Default select example">
+          <option selected>--Seleccione--</option>
         </select>
-        <label for="exampleDataList" class="form-label mt-2">Destino:</label>
-        <select class="form-select" name="destino" id="destino">
-          <option value = "0" selected>Seleccione</option>
-          <option value="1">Lugar 1</option>
-          <option value="2">Lugar 2</option>
-          <option value="3">Lugar 3</option>
+        <label for="exampleDataList" class="form-label mt-2">Fin</label>
+        <select id="destino" class="form-select" aria-label="Default select example">
+          <option selected>--Seleccione--</option>
         </select>
         <div class="d-grid mt-1">
           <button class="btn btn-primary my-2" id="calcularRuta">Calcular ruta</button>
