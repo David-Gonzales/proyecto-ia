@@ -2,6 +2,11 @@ const mapa = document.getElementById('mapa');
 const map = L.map(mapa).setView([-6.7715769944306885, -79.83870854313238], 14);
 const origen = document.getElementById('origen');
 const destino = document.getElementById('destino');
+const modalRegistro = document.querySelector("#modalCrearPunto");
+const btnAceptarModal = document.getElementById('btnAceptarModal');
+const inputNombreModal = document.getElementById('inputNombreModal');
+const mensajeError = document.getElementById('mensajeError');
+const myModal = new bootstrap.Modal(modalRegistro);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -9,9 +14,9 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const getData = async () => {
 
-    const response = await fetch('../static/js/map.json');
-    const data = await response.json();
-    lista = data.features;
+    let listaRutas = [];
+    let latitudSeleccionada;
+    let longitudSeleccionada;
 
     const estiloCirculo = customizedMarkerStyle('#FF7800');
 
@@ -26,34 +31,33 @@ const getData = async () => {
         }
     }
 
-    function onEachFeature(feature, layer) {
-        if(feature.properties && feature.properties.nombre){
-            layer.bindPopup(feature.properties.nombre)
+    map.on('click',(e) => {
+        this.latitudSeleccionada = e.latlng.lat;
+        this.longitudSeleccionada = e.latlng.lng; 
+        mensajeError.className = 'text-danger d-none';
+        inputNombreModal.value = '';
+        myModal.show();
+    })
+
+    btnAceptarModal.addEventListener('click', () =>{
+        let nombre = inputNombreModal.value;
+        if(nombre == '') {
+            mensajeError.className = 'text-danger d-block';
+            return
         }
-    }
 
-    L.geoJson(lista, {
-        onEachFeature
-    }).addTo(map);
+        myModal.hide();
+        listaRutas.push(
+            {
+                latitud: this.latitudSeleccionada,
+                longitud: this.longitudSeleccionada,
+                nombre: nombre,
+                distancia: 5
+            }
+        );
+        L.marker([this.latitudSeleccionada, this.longitudSeleccionada]).addTo(map).bindPopup(nombre).openPopup();
+    })
 
-    // Limpiar opciones existentes
-    origen.innerHTML = '<option value="0" selected>--Seleccione--</option>';
-    destino.innerHTML = '<option value="0" selected>--Seleccione--</option>';
-
-    // Obtener nombres de ubicaciones desde el GeoJSON
-    const nombresUbicaciones = lista.map(feature => feature.properties.nombre);
-
-    // Añadir opciones a los selects
-    nombresUbicaciones.forEach(nombre => {
-        const optionInicio = document.createElement('option');
-        optionInicio.value = nombre;
-        optionInicio.textContent = nombre;
-        const optionFin = optionInicio.cloneNode(true);
-
-        origen.appendChild(optionInicio);
-        destino.appendChild(optionFin);
-    });
-    
     /*
     //Estilos para círculo
     L.geoJson(lista, {
