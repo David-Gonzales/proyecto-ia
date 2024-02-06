@@ -1,77 +1,138 @@
 const mapa = document.getElementById('mapa');
 const map = L.map(mapa).setView([-6.7715769944306885, -79.83870854313238], 14);
-const origen = document.getElementById('origen');
-const destino = document.getElementById('destino');
 const modalRegistro = document.querySelector("#modalCrearPunto");
 const btnAceptarModal = document.getElementById('btnAceptarModal');
 const inputNombreModal = document.getElementById('inputNombreModal');
 const mensajeError = document.getElementById('mensajeError');
 const myModal = new bootstrap.Modal(modalRegistro);
+const btnCalcularRuta = document.getElementById("calcularRuta");
+const btnNuevaRuta = document.getElementById("nuevaRuta");
+
+btnCalcularRuta.disabled = true;
+btnNuevaRuta.disabled = true;
+
+let listaRutas = [];
+let latitudSeleccionada;
+let longitudSeleccionada;
+let puntos = [];
+let puntoActual;
+let linea; 
+let marcadores = [];
+
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-const getData = async () => {
+    
+function generarMatrizDeDistancias(puntos) {
+    const numPuntos = Object.keys(puntos).length;
+    const matrizDistancias = Array.from({ length: numPuntos }, () => Array(numPuntos).fill(0));
 
-    let listaRutas = [];
-    let latitudSeleccionada;
-    let longitudSeleccionada;
-
-    const estiloCirculo = customizedMarkerStyle('#FF7800');
-
-    function customizedMarkerStyle(fillColor) {
-        return{
-            radius: 9,
-            fillColor,
-            color: 'black',
-            weight: 1.2,
-            opacity: 1,
-            fillOpacity: 0.8
-        }
-    }
-
-    map.on('click',(e) => {
-        this.latitudSeleccionada = e.latlng.lat;
-        this.longitudSeleccionada = e.latlng.lng; 
-        mensajeError.className = 'text-danger d-none';
-        inputNombreModal.value = '';
-        myModal.show();
-    })
-
-    btnAceptarModal.addEventListener('click', () =>{
-        let nombre = inputNombreModal.value;
-        if(nombre == '') {
-            mensajeError.className = 'text-danger d-block';
-            return
-        }
-
-        myModal.hide();
-        listaRutas.push(
-            {
-                latitud: this.latitudSeleccionada,
-                longitud: this.longitudSeleccionada,
-                nombre: nombre,
-                distancia: 5
+    Object.keys(puntos).forEach((punto1, i) => {
+        Object.keys(puntos).forEach((punto2, j) => {
+            if (punto1 !== punto2) {
+                const distancia = map.distance(puntos[punto1], puntos[punto2]);
+                matrizDistancias[i][j] = distancia;
             }
-        );
-        L.marker([this.latitudSeleccionada, this.longitudSeleccionada]).addTo(map).bindPopup(nombre).openPopup();
-    })
+        });
+    });
 
-    /*
-    //Estilos para círculo
-    L.geoJson(lista, {
-        pointToLayer: function(feature, latlng){
-            return L.circleMarker(latlng, estiloCirculo);
-        }
-    }).addTo(map)
-    */
-    // origen.addEventListener('change', (e) =>{
-    //     if(e.target.value == 1){
-    //         L.geoJson(lista)
-    //         .addTo(map)
-    //     }
-    // })
+    return matrizDistancias;
 }
 
-getData();
+map.on('click',(e) => {
+    this.latitudSeleccionada = e.latlng.lat;
+    this.longitudSeleccionada = e.latlng.lng; 
+    mensajeError.className = 'text-danger d-none';
+    inputNombreModal.value = '';
+    myModal.show();
+    this.puntoActual = e.latlng;
+    puntos.push(this.puntoActual)
+})
+
+btnAceptarModal.addEventListener('click', () =>{
+    let nombre = inputNombreModal.value;
+    if(nombre == '') {
+        mensajeError.className = 'text-danger d-block';
+        return
+    }
+
+    myModal.hide();
+    listaRutas.push(
+        {
+            latitud: this.latitudSeleccionada,
+            longitud: this.longitudSeleccionada,
+            nombre: nombre,
+            distancia: 5,
+            punto: this.puntoActual
+        }
+    );
+    marcadores.push(L.marker([this.latitudSeleccionada, this.longitudSeleccionada]).addTo(map).bindPopup(nombre).openPopup());
+    if(listaRutas.length >= 2)
+    {
+        btnCalcularRuta.disabled = false;
+    }
+})
+
+btnCalcularRuta.addEventListener("click", () => {
+ 
+    if(listaRutas.length < 2)
+    {
+      return
+    }
+  
+    let matrizDistancias = generarMatrizDeDistancias(puntos);
+  
+    fetch("/calcularRuta", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(matrizDistancias),
+    })
+    .then((response) => {
+        if (!response.ok) {
+        throw new Error(
+            `La solicitud no fue exitosa. Código de estado: ${response.status}`
+        );
+        }
+        return response.json();
+    })
+    .then((data) => {
+        let rutaElemento = document.getElementById('ruta');
+        if (rutaElemento){
+        rutaElemento.parentNode.removeChild(rutaElemento);
+        }
+        
+        let puntosRespuesta = [];
+        data.lista.forEach(element => {
+        puntosRespuesta.push(listaRutas[element].punto)
+        });
+        puntosRespuesta.push(listaRutas[data.lista[0]].punto);
+        linea = L.polyline(puntosRespuesta, {
+        color: 'red'
+        });
+        linea.addTo(map);
+        btnNuevaRuta.disabled = false;
+    })
+    .catch((error) => {
+        console.error("Error en la petición:", error.message);
+    });
+});
+
+btnNuevaRuta.addEventListener("click", () => {
+    btnNuevaRuta.disabled = true;
+    btnCalcularRuta.disabled = true;
+    listaRutas = [];
+    puntos = [];
+    console.log(puntos)
+    map.removeLayer(linea);
+    linea = null;
+    marcadores.forEach(function(marcador) {
+        map.removeLayer(marcador);
+    });
+});
+
+
+

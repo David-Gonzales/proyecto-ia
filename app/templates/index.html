@@ -25,17 +25,11 @@
   <div class="container-fluid">
     <div class="row ">
       <div class="col-md-2 py-2 ">
-        <label for="exampleDataList" class="form-label">Inicio</label>
-        <select id="origen" class="form-select" aria-label="Default select example">
-          <option value="0" selected>--Seleccione--</option>
-        </select>
-        <label for="exampleDataList" class="form-label mt-2">Fin</label>
-        <select id="destino" class="form-select" aria-label="Default select example">
-          <option value="0" selected>--Seleccione--</option>
-        </select>
         <div class="d-grid mt-1">
           <button class="btn btn-primary my-2" id="calcularRuta">Calcular ruta</button>
-          <button class="btn btn-success" id="nuevaRuta" disabled>Nueva ruta</button>
+        </div>
+        <div class="d-grid mt-1">
+          <button class="btn btn-success my-2" id="nuevaRuta">Nueva ruta</button>
         </div>
       </div>
       <div class="col-md-10">
@@ -70,8 +64,6 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/funciones.js') }}"></script>
-
 </body>
 
 </html>
