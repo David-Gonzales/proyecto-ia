@@ -26,18 +26,19 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
     
 function generarMatrizDeDistancias(puntos) {
-    const numPuntos = Object.keys(puntos).length;
+    const numPuntos = puntos.length;
     const matrizDistancias = Array.from({ length: numPuntos }, () => Array(numPuntos).fill(0));
 
-    Object.keys(puntos).forEach((punto1, i) => {
-        Object.keys(puntos).forEach((punto2, j) => {
-            if (punto1 !== punto2) {
-                const distancia = map.distance(puntos[punto1], puntos[punto2]);
+    for (let i = 0; i < puntos.length; i++) {
+        for (let j = 0; j < puntos.length; j++) {
+            if (i !== j) {
+                const distancia = map.distance(puntos[i], puntos[j]);
                 matrizDistancias[i][j] = distancia;
             }
-        });
-    });
-
+            
+        }
+        
+    }
     return matrizDistancias;
 }
 
@@ -61,10 +62,7 @@ btnAceptarModal.addEventListener('click', () =>{
     myModal.hide();
     listaRutas.push(
         {
-            latitud: this.latitudSeleccionada,
-            longitud: this.longitudSeleccionada,
             nombre: nombre,
-            distancia: 5,
             punto: this.puntoActual
         }
     );
@@ -93,26 +91,23 @@ btnCalcularRuta.addEventListener("click", () => {
     })
     .then((response) => {
         if (!response.ok) {
-        throw new Error(
-            `La solicitud no fue exitosa. Código de estado: ${response.status}`
-        );
+            throw new Error(
+                `La solicitud no fue exitosa. Código de estado: ${response.status}`
+            );
         }
         return response.json();
     })
     .then((data) => {
-        let rutaElemento = document.getElementById('ruta');
-        if (rutaElemento){
-        rutaElemento.parentNode.removeChild(rutaElemento);
-        }
-        
         let puntosRespuesta = [];
+        
         data.lista.forEach(element => {
-        puntosRespuesta.push(listaRutas[element].punto)
+            puntosRespuesta.push(listaRutas[element].punto)
         });
+
         puntosRespuesta.push(listaRutas[data.lista[0]].punto);
         linea = L.polyline(puntosRespuesta, {
-        color: 'red'
-        });
+                    color: 'red'
+                });
         linea.addTo(map);
         btnNuevaRuta.disabled = false;
     })
@@ -126,7 +121,6 @@ btnNuevaRuta.addEventListener("click", () => {
     btnCalcularRuta.disabled = true;
     listaRutas = [];
     puntos = [];
-    console.log(puntos)
     map.removeLayer(linea);
     linea = null;
     marcadores.forEach(function(marcador) {
