@@ -12,44 +12,21 @@ btnCalcularRuta.disabled = true;
 btnNuevaRuta.disabled = true;
 
 let listaRutas = [];
-let latitudSeleccionada;
-let longitudSeleccionada;
 let puntos = [];
 let puntoActual;
 let linea; 
 let marcadores = [];
 
-
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-    
-function generarMatrizDeDistancias(puntos) {
-    const numPuntos = puntos.length;
-    const matrizDistancias = Array.from({ length: numPuntos }, () => Array(numPuntos).fill(0));
-
-    for (let i = 0; i < puntos.length; i++) {
-        for (let j = 0; j < puntos.length; j++) {
-            if (i !== j) {
-                const distancia = map.distance(puntos[i], puntos[j]);
-                matrizDistancias[i][j] = distancia;
-            }
-            
-        }
-        
-    }
-    return matrizDistancias;
-}
-
 map.on('click',(e) => {
-    this.latitudSeleccionada = e.latlng.lat;
-    this.longitudSeleccionada = e.latlng.lng; 
+    this.puntoActual = e.latlng;
+    puntos.push(this.puntoActual)
     mensajeError.className = 'text-danger d-none';
     inputNombreModal.value = '';
     myModal.show();
-    this.puntoActual = e.latlng;
-    puntos.push(this.puntoActual)
 })
 
 btnAceptarModal.addEventListener('click', () =>{
@@ -72,6 +49,21 @@ btnAceptarModal.addEventListener('click', () =>{
         btnCalcularRuta.disabled = false;
     }
 })
+
+function generarMatrizDeDistancias(puntos) {
+    const numPuntos = puntos.length;
+    const matrizDistancias = Array.from({ length: numPuntos }, () => Array(numPuntos).fill(0));
+
+    for (let i = 0; i < puntos.length; i++) {
+        for (let j = 0; j < puntos.length; j++) {
+            if (i !== j) {
+                const distancia = map.distance(puntos[i], puntos[j]);
+                matrizDistancias[i][j] = distancia;
+            }
+        }
+    }
+    return matrizDistancias;
+}
 
 btnCalcularRuta.addEventListener("click", () => {
  
